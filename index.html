@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kamus Kosakata Baru</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Kamus Kosakata Baru EYD</h1>
+  <input type="text" id="search" placeholder="Cari kosakata...">
+
+  <ul id="daftar-kosakata">
+    <li><b>Swafoto</b> : padanan kata untuk <i>selfie</i></li>
+    <li><b>Gawai</b> : padanan kata untuk <i>gadget</i></li>
+    <li><b>Pranala</b> : padanan kata untuk <i>link</i></li>
+  </ul>
+
+  <script>
+    // fitur pencarian sederhana
+    const search = document.getElementById('search');
+    const list = document.querySelectorAll('#daftar-kosakata li');
+
+    search.addEventListener('keyup', function() {
+      const value = this.value.toLowerCase();
+      list.forEach(item => {
+        item.style.display = item.textContent.toLowerCase().includes(value) ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+  </html>
+      
